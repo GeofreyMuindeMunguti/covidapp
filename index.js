@@ -7,8 +7,8 @@ const request = require('request');
 
 app.set('view engine', 'ejs'); 
 
-app.listen(process.env.PORT, () =>{
-    console.log("covidapp is running on port "+ process.env.PORT);
+app.listen(3000, () =>{
+    console.log("covidapp is running on port "+ 3000);
 })
 
 app.get('/', (req,res)=>{
