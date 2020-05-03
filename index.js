@@ -12,6 +12,9 @@ app.listen(3000, () =>{
 })
 
 app.get('/', (req,res)=>{
+
+    console.log("Hit get")
+
     let graphd = [];
     let country = 'kenya';
     let controller = 'Kenya';
@@ -48,6 +51,8 @@ app.get('/', (req,res)=>{
 })
 
 app.get('/api', (req,res)=>{
+    console.log("Hit API")
+    
     request('https://api.covid19api.com/summary', (request, result)=>{
         if(result){
         res.status(200).send(result.body);
