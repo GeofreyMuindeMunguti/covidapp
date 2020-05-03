@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid 19</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://unpkg.com/@coreui/coreui@3.0.0-rc.0/dist/css/coreui.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js" integrity="sha384-L2pyEeut/H3mtgCBaUNw7KWzp5n9&#43;4pDQiExs933/5QfaTh8YStYFFkOzSoXjlTb" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@coreui/coreui@3.0.0-rc.0/dist/js/coreui.min.js"></script>
+
+</head>
+<style>
+  
+main {
+    width: 100%;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    min-height: 100%;
+    height: fit-content;
+}
+
+header {
+    width: 100%;
+    height: fit-content;
+}
+
+header .top-wrap {
+    padding: 1em 0;
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+}
+
+header .top-wrap  .intro-text {
+    margin: 0 auto 0 0;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+header .top-wrap  .custom-control {
+    margin: 0 0 0 auto;
+}
+
+header .filter-wrap {
+    padding: 1em 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+header .filter-wrap .filter-text {
+    margin: 0 2em 0 0;
+    font-size: 18px;
+}
+
+header .filter-wrap .dropdown {
+    margin: 0 0 0 0;
+}
+
+header .filter-wrap .dropdown  button {
+    font-size: 12px;
+    background-color: #C4C4C4;
+}
+
+header .filter-wrap .dropdown  .dropdown-menu a {
+    font-size: 12px;
+}
+
+.card-section {
+    width: 100%;
+    height: fit-content;
+}
+
+.card-section .multiple-cards {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    padding: 0 0 1em 0 ;
+}
+
+.card-section .multiple-cards .my-card{
+    width: 100%;
+    max-width: 400px;
+    border-radius: 1em;
+    height: 200px;
+    background-color: white;
+}
+.card-section .multiple-cards .my-card.one{
+    margin: 1em 2em 0 0;
+}
+.card-section .multiple-cards .my-card.two{
+    margin: 1em 2em 0 0;
+}
+.card-section .multiple-cards .my-card.three{
+    margin: 1em 0 0 0;
+}
+
+.card-section .single-card {
+    width: 100%;
+    padding: 1em 0;
+}
+
+.card-section .single-card .my-card {
+    width: 100%;
+    border-radius: 1em;
+    height: 300px;
+    background-color: white;
+}
+
+.card-section .single-card .icon-wrap {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+}
+
+.card-section .single-card .icon-wrap .question-icon {
+    position: relative;
+    bottom: 1px;
+    width: 3em;
+    height: 3em;
+    margin-left: auto;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #C4C4C4;
+    font-weight: bold;
+    font-size: 14px;
+    transform: translateY(-2.5em) translatex(.5em);
+    -webkit-transform: translateY(-2.5em) translatex(.5em);
+    -moz-transform: translateY(-2.5em) translatex(.5em);
+    -ms-transform: translateY(-2.5em) translatex(.5em);
+    -o-transform: translateY(-2.5em) translatex(.5em);
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+    header .top-wrap {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    header .top-wrap  .custom-control {
+        margin: 1em 0 0 auto;
+    }
+    header .filter-wrap {
+        padding: 1em 0;
+        width: 100%;
+        display: flex;
+        align-items: stretch
+    }
+    header .filter-wrap .filter-text {
+        margin: 0 auto 0 0;
+        font-size: 18px;
+    }
+    
+    header .filter-wrap .dropdown {
+        margin: 0 0 0 auto;
+    }
+    .card-section .multiple-cards {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 2em 0 1em 0 ;
+    }
+    .card-section .multiple-cards .my-card {
+        margin: 1em 0 0 0 !important;
+        max-width: 100% !important;
+    }
+}
+
+
+</style>
+<body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> 
+<script>
+let graphtheme = 'light1'
+
+window.onload = function () {
+  renderChat();
+}
+
+function renderChat(){
+var graphdata = "<%-(gdata)%>";
+
+ 
+var arraydata = graphdata.split(',');
+
+// console.log(arraydata);
+
+let datatograph = [];
+let arrayLength = arraydata.length;
+for(let i = 0 ; i < arrayLength; i++) {
+    
+   let val = arraydata[i];
+
+  //  console.log(val)
+
+   datatograph.push({y: parseInt(val)});
+
+}
+ 
+
+var chart = new CanvasJS.Chart("chartContainer", {
+animationEnabled: true,
+theme: graphtheme,
+title:{
+text: "Trend over time"
+},
+axisY:{
+includeZero: false
+},
+data: [{        
+type: "line",
+  indexLabelFontSize: 16,
+dataPoints: datatograph
+}]
+});
+chart.render();
+}
+
+
+ function myFunction(){
+    
+   if(document.getElementById('main').style.backgroundColor == "rgb(68, 68, 68)"){
+    document.getElementById('main').style.backgroundColor = "white"
+    document.getElementById('textnew').style.color = 'black'
+    document.getElementById('texttt').style.color = 'black'
+    document.getElementById('textr').style.color = 'black'
+    document.getElementById('text').style.color = 'black'
+    document.getElementById('textd').style.color = 'black'
+    document.getElementById('headermsg').style.color = 'black'
+    document.getElementById('filter').style.color = 'black'
+    graphtheme = 'light1'
+    renderChat();
+     
+   }else{
+     document.getElementById('main').style.backgroundColor = "rgb(68, 68, 68)";
+     document.getElementById('textnew').style.color = 'white'
+     document.getElementById('texttt').style.color = 'white'
+    document.getElementById('textr').style.color = 'white'
+    document.getElementById('textd').style.color = 'white'
+    document.getElementById('headermsg').style.color = 'white'
+    document.getElementById('filter').style.color = 'white'
+    document.getElementById('text').style.color = 'white'
+
+    graphtheme = 'dark1'
+    renderChat();
+     
+   }
+}
+</script>
+
+<main id="main">
+
+<div class="container">
+
+
+<header>
+    <div class="top-wrap">
+        <h4 id="headermsg" class="intro-text">Hi, knowledge is power</h4>
+
+        <div class="custom-control custom-switch ml-auto">
+            <input type="checkbox" name="editProfileSwitch" onchange="myFunction()" class="custom-control-input" id="customSwitch1">
+            <label id="text" class="custom-control-label" for="customSwitch1">Dark mode</label>
+        </div>
+    </div>
+
+
+    <div class="filter-wrap">
+        <h4 id="filter" class="filter-text">Data on</h4>
+
+          <select>
+            <option>Kenya</option>
+          </select>
+    </div>
+</header>
+
+
+
+
+<section class="card-section">
+    
+    <div class="multiple-cards">
+
+        <!-- <div class="my-card one"> -->
+            <div class="col-sm-3">
+                <div class="c-callout c-callout-warning b-t-1 b-r-1 b-b-1">
+                  <small class="text-muted">New Cases</small><br>
+                  <strong id="textnew" class="h4"><%- data.NewConfirmed -%></strong>
+                </div>
+              </div>
+        <!-- </div> -->
+        <!-- <div class="my-card two"> -->
+            <div class="col-sm-3">
+                <div class="c-callout c-callout-info b-t-1 b-r-1 b-b-1">
+                  <small class="text-muted">Total Cases</small><br>
+                  <strong id="texttt" class="h4"><%- data.TotalConfirmed -%></strong>
+                </div>
+              </div>
+        <!-- </div> -->
+         <!-- <div class="my-card one"> -->
+          <div class="col-sm-3">
+            <div class="c-callout c-callout-success b-t-1 b-r-1 b-b-1">
+              <small class="text-muted">Total Recovered</small><br>
+              <strong id="textr" class="h4"><%- data.TotalRecovered -%></strong>
+            </div>
+          </div>
+    <!-- </div> -->
+    <!-- <div class="my-card three"> -->
+      <div class="col-sm-3">
+        <div class="c-callout c-callout-danger b-t-1 b-r-1 b-b-1">
+          <small class="text-muted">Total Deaths</small><br>
+          <strong id="textd" class="h4"><%- data.TotalDeaths -%></strong>
+        </div>
+      </div>
+<!-- </div> -->
+
+    </div>
+
+    <div class="single-card">
+        <div class="my-card">
+            <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+        </div>
+        <!-- <div class="icon-wrap">
+            <span class="question-icon">?</span>
+        </div> -->
+
+    </div>
+
+</section>
+
+
+
+
+
+
+</div>
+
+</main>
+
+
+</body>
+</html>
